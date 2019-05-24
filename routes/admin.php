@@ -1,4 +1,7 @@
 <?php
+//后台首页
+Route::get('/', \App\Http\Controllers\Admin\AdminController::class.'@index');
 
-Route::get('/admin/home', \App\Http\Controllers\Admin\AdminController::class.'@index')->name('home');
+Route::get('/index', \App\Http\Controllers\Admin\AdminController::class.'@index');
+
 
