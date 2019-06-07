@@ -322,6 +322,24 @@
         <main class="app-layout-content">
 
             <!-- Page Content -->
+            {{--弹窗--}}
+            @if(isset($message))
+            <div id="top_alert_div" class="alert alert-success">
+                <a href="#" id="top_alert" class="close" data-dismiss="alert">
+                    &times;
+                </a>
+                {{--<strong>警告！</strong>您的网络连接有问题。--}}
+                {{$message}}
+            </div>
+            <script>
+                setTimeout(function (){
+                    $("#top_alert_div").fadeOut("slow");
+                }, 500);
+            </script>
+
+            @endif
+           {{--弹窗--}}
+
             @yield('content')
             <!-- .container-fluid -->
             <!-- End Page Content -->
@@ -335,6 +353,7 @@
 
 <!-- Apps Modal -->
 <!-- Opens from the button in the header -->
+
 <div id="apps-modal" class="modal fade" tabindex="-1" role="dialog">
     <div class="modal-sm modal-dialog modal-dialog-top">
         <div class="modal-content">
